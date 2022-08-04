@@ -1,0 +1,118 @@
+:root{
+    --main-color: #0a58ca;
+    --second-color: rgb(255, 145, 0);
+}
+body{
+    background-color: #eee;
+    font-family: 'Arima', cursive;
+    font-family: 'Cairo', sans-serif;
+    font-family: 'Ibarra Real Nova', serif;
+    font-family: 'Roboto', sans-serif;
+}
+.not-msg{
+    font-weight: bold; 
+    font-size:25px;
+    color:white;
+    background-color: green;
+    border-radius: 5px;
+    padding: 10px;
+}
+.navbar{
+    background-color: var(--main-color);
+}
+.logo{
+    background-color: white;
+    border-radius: 30%;
+    width: 80px;
+}
+.nav-link{
+    color: rgb(255, 145, 0);
+    font-weight: bold;
+    font-size: 20px;
+}
+.nav-link.active{
+    color: white !important;
+}
+.navbar-toggler{
+    background-color: var(--second-color);
+    color: white;
+}
+.navbar-toggler:focus{
+    outline: none;
+}
+.navbar-toggler-icon{
+    background-color: white;
+    border-radius: 4px;
+}
+/* Start Landing */
+.landing{
+    background-color: var(--second-color);
+    min-height: calc(100vh - 87px);
+}
+.main-btn{
+    border: 2px solid var(--main-color);
+    background-color: var(--second-color);
+    padding: 10px;
+}
+/* End Landing */
+.main-title::after{
+    content: '';
+    width: 120px;
+    height: 2px;
+    background-color: var(--second-color);
+    position: absolute;
+    bottom: -180px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.package-box{
+    background-color: white;
+    border: 1px solid #33333361;
+    border-radius: 10px;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+    box-shadow: 0 0 0 0;
+}
+.buy-btn{
+    background-color: var(--second-color);
+    color: white;
+    text-decoration: none;
+    padding: 7px;
+    border-radius: 3px;
+}
+/*order*/
+.order-form{
+    background-color: var(--second-color);
+    margin: 15px;
+    margin-left: 30px;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+}
+.order-form p{
+    color: white;
+}
+.order-form select{
+    border-radius: 5px;
+    border: none;
+}
+.order-form input{
+    border-radius: 5px;
+    border: none;
+}
+.order-form input:focus{
+    outline: none;
+}
+.order-form input[type="submit"]{
+    background-color: var(--main-color);
+    color: white;
+}
+/*order*/
+/*Footer*/
+.footer{
+    background-color: var(--main-color);
+}
+/*Footer*/

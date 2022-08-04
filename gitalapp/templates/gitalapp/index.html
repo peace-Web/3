@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>peaceWeb3</title>
+    <meta content="Best IPTV Offers, Get Access To all Paid and Free Channels From All Over The world With Different Subtitles, Contact Us To Get You Plan" 
+          name="description">
+    <link href="{% static 'imgs/myLogo.png' %}" rel="icon">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arima:wght@100;200;300;400;500;600;700&family=Cairo:wght@200;300;400;500;600;800;900&family=Ibarra+Real+Nova:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" 
+      rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+          <a class="navbar-brand" href="#"><img class="logo" src="{% static 'imgs/myLogo.png' %}" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#feature">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#price">Pricing</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      {% block content %}
+      <div class="landing d-flex justify-content-center align-items-center">
+        <div class="text-center text-light ">
+          {% for message in messages %}
+          <p class="not-msg mb-4">{{message}}</p>
+          {% endfor %}
+           <h1>Welcome To PeaceWeb</h1>
+           <p class="text-white-50 fs-5 mb-5 " >Best Digital Service Provider</p>
+           <a class="btn btn-primary rounded-pill main-btn " href="#start">Get Started</a>
+        </div>
+      </div>
+      <div class="packages text-center pt-5 pb-5">
+         <div class="container">
+          <div class="main-title positon-relative mb-5 mt-5">
+
+            <h2 id="home">Our Packages</h2>
+            <p id="feature" class="text-black-50 text-uppercase">join us and enjoy best iptv plans</p>
+          </div>
+          <div class="row">
+               {% for package in packages reversed %}
+               <div id="price" class="col-md-4 col-lg-3 gap-3 mb-4 p-4 package-box">
+                <h2 id="start" >{{package.type}}</h2>
+                <h3>{{package.price}}</h3>
+                <p>{{package.feature1}}</p>
+                <p>{{package.feature2}}</p>
+                <p>{{package.feature3}}</p>
+                <p>{{package.feature4}}</p>
+                <p>{{package.feature5}}</p>
+                <p>{{package.feature6}}</p>
+                <p>{{package.feature7}}</p>
+                <a class="buy-btn" href="{% url 'order' package.id %}">Buy Now</a>
+              </div>
+               {% endfor %}
+          </div>
+         </div>
+      </div>
+
+    {% endblock %}
+    <div class="footer text-center text-white-50 text-md-start pt-5 pb-5">
+      <div class="container">
+        <div class="row">
+         <div class="col-md-6 col-lg-4">
+           <div class="info">
+            <img src="{% static 'imgs/myLogo.png' %}" alt="" class="logo mb-4">
+            <p class="mb-4">
+              For best iptv plans contact peaceWeb!
+            </p>
+            <div class="copyright">
+              Created by <span>peaceWeb</span>
+              <div>&copy;2016-2022</div>
+            </div>
+
+           </div>
+         </div>
+         <div class="col-md-6 col-lg-4">
+          <div class="links">
+            <h5 class="text-light">Links</h5>
+            <ul class="list-unstyled lh-lg">
+              <li>home</li>
+              <li>features</li>
+              <li>pricing</li>
+            </ul>
+
+          </div>
+         </div>
+         <div class="col-md-6 col-lg-4">
+          <div class="contact">
+            <h5 class="text-light">Contact Us</h5>
+            <p class="lh-lg mt-3 mb-5">
+              Get in touch with us via email, we are waiting for your call or message
+            </p>
+             <a class="btn rounded-pill main-btn w-100" href="mailto:peaceweb3@gmail.com">peaceweb3@gmail.com</a>
+          </div>
+         </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" 
+        crossorigin="anonymous"></script>
+</body>
+</html>

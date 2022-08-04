@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+
+{% block content %}
+{% for message in messages %}
+<p>{{message}}</p>
+{% endfor %}
+<div class="order-form">
+    <form action="{% url 'makeorder'  %}" method="post">
+        {% csrf_token %}
+        <p>First Name</p>
+        <input type="text" name="fname" required>
+        <p>last Name</p>
+        <input type="text" name="lname">
+        <p>Email</p>
+        <input type="email" name="email" required>
+        <p>Phone(WhatsApp)</p>
+        <input type="text" name="phone" required>
+        <p>Package</p>
+        <select name="package" id="">
+            <option value="package5">1 Year</option>
+            <option value="package4">6 Months</option>
+            <option value="package3">3 Months</option>
+            <option value="package2">1 Months</option>
+            <option value="package1">Free Trial</option>
+        </select>
+        <p>Payment Gateway</p>
+        <select name="pay" id="">
+            <option value="paypal">PayPal</option>
+            <option value="creditCard">creditCard</option>
+        </select>
+        <input id="send" type="submit" value="Place Order">
+    
+    </form>
+</div>
+
+{% endblock %}
